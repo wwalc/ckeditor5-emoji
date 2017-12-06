@@ -51,7 +51,7 @@ ClassicEditor
 
 ## Support
 
-The plugin comes with no support, although if you find it useful, feel free to submit an issue and/or send a pull request.
+The plugin comes with no support. However if you find it useful, feel free to submit an issue and/or send a pull request.
 
 ## CKEditor 5 compatibility
 
