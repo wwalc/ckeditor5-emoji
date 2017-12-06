@@ -14,7 +14,7 @@ import ViewCollection from '@ckeditor/ckeditor5-ui/src/viewcollection';
 import FocusTracker from '@ckeditor/ckeditor5-utils/src/focustracker';
 import FocusCycler from '@ckeditor/ckeditor5-ui/src/focuscycler';
 import KeystrokeHandler from '@ckeditor/ckeditor5-utils/src/keystrokehandler';
-import SubmitHandler from '@ckeditor/ckeditor5-ui/src/bindings/submithandler';
+import submitHandler from '@ckeditor/ckeditor5-ui/src/bindings/submithandler';
 
 import '../../theme/emojilistview.css';
 
@@ -54,7 +54,7 @@ export default class EmojiListView extends View {
 		 *
 		 * @member {module:ui/button/buttonview~ButtonView}
 		 */
-		editor.config.get( 'emoji' ).forEach( ( emoji ) => {
+		editor.config.get( 'emoji' ).forEach( emoji => {
 			this.emojiButtonViews.add( this._createButton( emoji.text, 'emoji:' + emoji.name ) );
 		} );
 
@@ -121,7 +121,7 @@ export default class EmojiListView extends View {
 	render() {
 		super.render();
 
-		SubmitHandler( {
+		submitHandler( {
 			view: this
 		} );
 

@@ -4,9 +4,7 @@ import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
 import EmojiListView from './ui/emojilistview';
 import ContextualBalloon from '@ckeditor/ckeditor5-ui/src/panel/balloon/contextualballoon';
 import ClickObserver from '@ckeditor/ckeditor5-engine/src/view/observer/clickobserver';
-import ClickOutsideHandler from '@ckeditor/ckeditor5-ui/src/bindings/clickoutsidehandler';
-import Text from '@ckeditor/ckeditor5-engine/src/model/text';
-
+import clickOutsideHandler from '@ckeditor/ckeditor5-ui/src/bindings/clickoutsidehandler';
 
 export default class Emoji extends Plugin {
 	/**
@@ -60,7 +58,10 @@ export default class Emoji extends Plugin {
 			button.icon = emojiIcon;
 			button.tooltip = true;
 			// Ugly hack for https://github.com/ckeditor/ckeditor5-ui/issues/350
-			setTimeout( function() { button.iconView.set( 'viewBox', '0 0 128 128' ); }, 0 );
+			/* eslint-env browser */
+			setTimeout( function() {
+				button.iconView.set( 'viewBox', '0 0 128 128' );
+			}, 0 );
 
 			// Show the panel on button click.
 			this.listenTo( button, 'execute', () => this._showPanel( true ) );
@@ -80,14 +81,14 @@ export default class Emoji extends Plugin {
 	_createForm() {
 		const editor = this.editor;
 		const emojiView = new EmojiListView( editor );
-		emojiView.template.children[0].children
 
-		editor.config.get( 'emoji' ).forEach( ( emoji ) => {
+		editor.config.get( 'emoji' ).forEach( emoji => {
 			this.listenTo( emojiView, 'emoji:' + emoji.name, () => {
 				const document = editor.document;
 				const batch = document.batch();
 				document.enqueueChanges( () => {
-					batch.insertText( emoji.text, document.selection.getFirstPosition() );
+					batch.insertText( emoji.text + ' ', document.selection.getFirstPosition() );
+					this._hidePanel();
 				} );
 			} );
 		} );
@@ -122,16 +123,11 @@ export default class Emoji extends Plugin {
 	/**
 	 * Adds the {@link #formView} to the {@link #_balloon}.
 	 */
-	_showPanel( focusInput ) {
-		const editor = this.editor;
-		const editing = editor.editing;
-		const showViewDocument = editing.view;
-
+	_showPanel( ) {
 		this._balloon.add( {
 			view: this.formView,
 			position: this._getBalloonPositionData()
 		} );
-
 	}
 
 	/**
@@ -141,8 +137,6 @@ export default class Emoji extends Plugin {
 	 * @private
 	 */
 	_attachActions() {
-		const viewDocument = this.editor.editing.view;
-
 		// Focus the form if the balloon is visible and the Tab key has been pressed.
 		this.editor.keystrokes.set( 'Tab', ( data, cancel ) => {
 			if ( this._balloon.visibleView === this.formView && !this.formView.focusTracker.isFocused ) {
@@ -165,7 +159,7 @@ export default class Emoji extends Plugin {
 		} );
 
 		// Close on click outside of balloon panel element.
-		ClickOutsideHandler( {
+		clickOutsideHandler( {
 			emitter: this.formView,
 			activator: () => this._balloon.hasView( this.formView ),
 			contextElements: [ this._balloon.view.element ],
