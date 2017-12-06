@@ -14,7 +14,7 @@ To install it, run:
 npm install --save @wwalc/ckeditor5-emoji
 ```
 
-When updating build configuration use:
+When updating the build configuration use the following:
  * `@wwalc/ckeditor5-emoji/src/emoji` - plugin name
  * `emoji` - toolbar item (button)
 
