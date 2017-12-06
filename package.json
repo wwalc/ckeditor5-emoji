@@ -1,7 +1,7 @@
 {
-  "name": "@ckeditor/ckeditor5-link",
-  "version": "1.0.0-alpha.2",
-  "description": "Link feature for CKEditor 5.",
+  "name": "@wwalc/ckeditor5-emoji",
+  "version": "0.0.1",
+  "description": "Emoji feature for CKEditor 5.",
   "keywords": [
     "ckeditor5",
     "ckeditor5-feature"
@@ -13,13 +13,16 @@
     "@ckeditor/ckeditor5-ui": "^1.0.0-alpha.2"
   },
   "devDependencies": {
+    "@ckeditor/ckeditor5-basic-styles": "^1.0.0-alpha.2",
+    "@ckeditor/ckeditor5-clipboard": "^1.0.0-alpha.2",
     "@ckeditor/ckeditor5-editor-classic": "^1.0.0-alpha.2",
     "@ckeditor/ckeditor5-enter": "^1.0.0-alpha.2",
+    "@ckeditor/ckeditor5-essentials": "^1.0.0-alpha.2",
     "@ckeditor/ckeditor5-heading": "^1.0.0-alpha.2",
+    "@ckeditor/ckeditor5-list": "^1.0.0-alpha.2",
     "@ckeditor/ckeditor5-paragraph": "^1.0.0-alpha.2",
     "@ckeditor/ckeditor5-typing": "^1.0.0-alpha.2",
     "@ckeditor/ckeditor5-undo": "^1.0.0-alpha.2",
-    "@ckeditor/ckeditor5-utils": "^1.0.0-alpha.2",
     "eslint": "^4.8.0",
     "eslint-config-ckeditor5": "^1.0.7",
     "husky": "^0.14.3",
@@ -29,13 +32,12 @@
     "node": ">=6.0.0",
     "npm": ">=3.0.0"
   },
-  "author": "CKSource (http://cksource.com/)",
+  "author": "Wiktor Walc",
   "license": "(GPL-2.0 OR LGPL-2.1 OR MPL-1.1)",
-  "homepage": "https://ckeditor5.github.io",
-  "bugs": "https://github.com/ckeditor/ckeditor5-link/issues",
+  "bugs": "https://github.com/wwalc/ckeditor5-emoji/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ckeditor/ckeditor5-link.git"
+    "url": "https://github.com/wwalc/ckeditor5-emoji.git"
   },
   "files": [
     "lang",
