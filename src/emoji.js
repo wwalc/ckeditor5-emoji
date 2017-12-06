@@ -28,6 +28,15 @@ export default class Emoji extends Plugin {
 
         editor.editing.view.addObserver( ClickObserver );
 
+        editor.config.define( 'emoji', [
+            { name: 'smile', text: '😀' },
+            { name: 'wink', text: '😉' },
+            { name: 'cool', text: '😎' },
+            { name: 'surprise', text: '😮' },
+            { name: 'confusion', text: '😕' },
+            { name: 'crying', text: '😢' }
+        ] );
+
         /**
          * The contextual balloon plugin instance.
          *

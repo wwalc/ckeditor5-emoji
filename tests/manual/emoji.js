@@ -25,8 +25,7 @@ ClassicEditor
             { name: 'wink', text: '😉' },
             { name: 'cool', text: '😎' },
             { name: 'surprise', text: '😮' },
-            { name: 'confusion', text: '😕' },
-            { name: 'crying', text: '😢' }
+            { name: 'confusion', text: '😕' }
         ],
         toolbar: [ 'headings', 'undo', 'redo', 'bold', 'italic', 'bulletedList', 'numberedList', 'emoji' ]
     } )
