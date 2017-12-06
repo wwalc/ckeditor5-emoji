@@ -7,6 +7,11 @@ This package implements the emoji feature for CKEditor 5.
 
 The plugin was created during hackathon, it is roughly based on the source code of the link plugin. It basically inserts Unicode emoji into the editor at the current cursor position.
 
+## CKEditor 5 compatibility
+
+The plugin was built on top of the latest development version of CKEditor 5 (`0c7bc99ab`) and *does not work with the latest "official release" (ver. 1.0.0-alpha.2)*.
+It should be compatible with 1.0.0-alpha.3 though (once it is released).
+
 ## Enabling the emoji plugin
 
 Since this is a third-party plugin, it is not enabled by default in CKEditor 5 and has to be added to it manually. For more information check the official documentation about [creating custom builds](https://docs.ckeditor.com/ckeditor5/latest/builds/guides/development/custom-builds.html).
@@ -19,6 +24,8 @@ npm install --save @wwalc/ckeditor5-emoji
 When updating the build configuration use the following:
  * `@wwalc/ckeditor5-emoji/src/emoji` - plugin name
  * `emoji` - toolbar item (button)
+
+*Note: the above steps will not work today, due to compatibility issues described above.*
 
 ## Configuration
 
@@ -52,10 +59,6 @@ ClassicEditor
 ## Support
 
 The plugin comes with no support. However if you find it useful, feel free to submit an issue and/or send a pull request.
-
-## CKEditor 5 compatibility
-
-The plugin was built and tested with CKEditor 5 ver. 1.0.0-alpha.2.
 
 ## License
 
