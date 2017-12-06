@@ -55,7 +55,7 @@ The plugin comes with no support. However if you find it useful, feel free to su
 
 ## CKEditor 5 compatibility
 
-The plugin was built and tested with CKEditor 5 ver. 1.0.0-aplha.2.
+The plugin was built and tested with CKEditor 5 ver. 1.0.0-alpha.2.
 
 ## License
 
