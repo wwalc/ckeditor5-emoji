@@ -22,7 +22,7 @@ When updating the build configuration use the following:
 
 ## Configuration
 
-The list of Emojis is confugurable via `config.emoji`:
+The list of Emojis is configurable via `config.emoji`:
 
 ```
 ClassicEditor
