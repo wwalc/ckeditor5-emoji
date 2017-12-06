@@ -4,11 +4,25 @@ import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
 import EmojiListView from './ui/emojilistview';
 import ContextualBalloon from '@ckeditor/ckeditor5-ui/src/panel/balloon/contextualballoon';
 import ClickObserver from '@ckeditor/ckeditor5-engine/src/view/observer/clickobserver';
-import clickOutsideHandler from '@ckeditor/ckeditor5-ui/src/bindings/clickoutsidehandler';
+import ClickOutsideHandler from '@ckeditor/ckeditor5-ui/src/bindings/clickoutsidehandler';
 import Text from '@ckeditor/ckeditor5-engine/src/model/text';
 
 
 export default class Emoji extends Plugin {
+    /**
+     * @inheritDoc
+     */
+    static get requires() {
+        return [ ContextualBalloon ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    static get pluginName() {
+        return 'Emoji';
+    }
+
     init() {
         const editor = this.editor;
 
@@ -36,6 +50,7 @@ export default class Emoji extends Plugin {
             button.label = editor.t( 'Emoji' );
             button.icon = emojiIcon;
             button.tooltip = true;
+            // Ugly hack for https://github.com/ckeditor/ckeditor5-ui/issues/350
             setTimeout( function() { button.iconView.set( 'viewBox', '0 0 128 128' ); }, 0 );
 
             // Show the panel on button click.
@@ -48,37 +63,23 @@ export default class Emoji extends Plugin {
     }
 
     /**
-     * Creates the {@link module:link/ui/linkformview~LinkFormView} instance.
+     * Creates the {@link module:emoji/ui/emojilistview~EmojiListView} instance.
      *
      * @private
-     * @returns {module:link/ui/linkformview~LinkFormView} The link form instance.
+     * @returns {module:emoji/ui/emojilistview~EmojiListView} The emoji list view instance.
      */
     _createForm() {
         const editor = this.editor;
-        const emojiView = new EmojiListView( editor.locale );
+        const emojiView = new EmojiListView( editor );
+        emojiView.template.children[0].children
 
-        // Hide the panel after clicking on emojiView `Cancel` button.
-        this.listenTo( emojiView, 'emoji-smile', () => {
-            const document = editor.document;
-            const batch = document.batch();
-            document.enqueueChanges( () => {
-                batch.insertText( '😀', document.selection.getFirstPosition() );
-            } );
-        } );
-
-        this.listenTo( emojiView, 'emoji-cool', () => {
-            const document = editor.document;
-            const batch = document.batch();
-            document.enqueueChanges( () => {
-                batch.insertText( '😎', document.selection.getFirstPosition() );
-            } );
-        } );
-
-        this.listenTo( emojiView, 'emoji-screaming', () => {
-            const document = editor.document;
-            const batch = document.batch();
-            document.enqueueChanges( () => {
-                batch.insertText( '😱', document.selection.getFirstPosition() );
+        editor.config.get( 'emoji' ).forEach( ( emoji ) => {
+            this.listenTo( emojiView, 'emoji:' + emoji.name, () => {
+                const document = editor.document;
+                const batch = document.batch();
+                document.enqueueChanges( () => {
+                    batch.insertText( emoji.text, document.selection.getFirstPosition() );
+                } );
             } );
         } );
 
@@ -91,6 +92,16 @@ export default class Emoji extends Plugin {
         return emojiView;
     }
 
+    /**
+     * Returns positioning options for the {@link #_balloon}. They control the way the balloon is attached
+     * to the target element or selection.
+     *
+     * If the selection is collapsed and inside a link element, the panel will be attached to the
+     * entire link element. Otherwise, it will be attached to the selection.
+     *
+     * @private
+     * @returns {module:utils/dom/position~Options}
+     */
     _getBalloonPositionData() {
         const viewDocument = this.editor.editing.view;
         const target =
@@ -130,7 +141,7 @@ export default class Emoji extends Plugin {
                 cancel();
             }
         }, {
-            // Use the high priority because the link UI navigation is more important
+            // Use the high priority because the emoji UI navigation is more important
             // than other feature's actions, e.g. list indentation.
             // https://github.com/ckeditor/ckeditor5-link/issues/146
             priority: 'high'
@@ -145,7 +156,7 @@ export default class Emoji extends Plugin {
         } );
 
         // Close on click outside of balloon panel element.
-        clickOutsideHandler( {
+        ClickOutsideHandler( {
             emitter: this.formView,
             activator: () => this._balloon.hasView( this.formView ),
             contextElements: [ this._balloon.view.element ],
@@ -174,12 +185,5 @@ export default class Emoji extends Plugin {
 
         this.stopListening( this.editor.editing.view, 'render' );
         this._balloon.remove( this.formView );
-    }
-
-    /**
-     * @inheritDoc
-     */
-    static get pluginName() {
-        return 'Emoji';
     }
 }

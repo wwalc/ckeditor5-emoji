@@ -18,10 +18,18 @@ import List from '@ckeditor/ckeditor5-list/src/list';
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
         plugins: [
-            Essentials, Link,
+            Essentials,
             Paragraph, Heading, Emoji, Bold, Italic, Heading, List
         ],
-        toolbar: [ 'link', 'headings', 'undo', 'redo', 'bold', 'italic', 'bulletedList', 'numberedList', 'emoji' ]
+        emoji: [
+            { name: 'smile', text: '😀' },
+            { name: 'wink', text: '😉' },
+            { name: 'cool', text: '😎' },
+            { name: 'surprise', text: '😮' },
+            { name: 'confusion', text: '😕' },
+            { name: 'crying', text: '😢' }
+        ],
+        toolbar: [ 'headings', 'undo', 'redo', 'bold', 'italic', 'bulletedList', 'numberedList', 'emoji' ]
     } )
     .then( editor => {
         window.editor = editor;

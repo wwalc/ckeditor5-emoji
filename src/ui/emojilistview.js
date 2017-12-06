@@ -8,14 +8,13 @@
  */
 
 import View from '@ckeditor/ckeditor5-ui/src/view';
+import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
 import ViewCollection from '@ckeditor/ckeditor5-ui/src/viewcollection';
 
-import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
-
-import submitHandler from '@ckeditor/ckeditor5-ui/src/bindings/submithandler';
 import FocusTracker from '@ckeditor/ckeditor5-utils/src/focustracker';
 import FocusCycler from '@ckeditor/ckeditor5-ui/src/focuscycler';
 import KeystrokeHandler from '@ckeditor/ckeditor5-utils/src/keystrokehandler';
+import SubmitHandler from '@ckeditor/ckeditor5-ui/src/bindings/submithandler';
 
 import '../../theme/emojilistview.css';
 
@@ -30,8 +29,8 @@ export default class EmojiListView extends View {
     /**
      * @inheritDoc
      */
-    constructor( locale ) {
-        super( locale );
+    constructor( editor ) {
+        super( editor.locale );
 
         /**
          * Tracks information about DOM focus in the form.
@@ -48,15 +47,16 @@ export default class EmojiListView extends View {
          * @member {module:utils/keystrokehandler~KeystrokeHandler}
          */
         this.keystrokes = new KeystrokeHandler();
+        this.emojiButtonViews = new ViewCollection( editor.locale );
 
         /**
          * The Smile button view.
          *
          * @member {module:ui/button/buttonview~ButtonView}
          */
-        this.smileButtonView = this._createButton( '😀', 'emoji-smile' );
-        this.coolButtonView = this._createButton( '😎', 'emoji-cool' );
-        this.screamingButtonView = this._createButton( '😱', 'emoji-screaming' );
+        editor.config.get( 'emoji' ).forEach( ( emoji ) => {
+            this.emojiButtonViews.add( this._createButton( emoji.text, 'emoji:' + emoji.name ) );
+        } );
 
         /**
          * A collection of views which can be focused in the form.
@@ -109,11 +109,7 @@ export default class EmojiListView extends View {
                         ]
                     },
 
-                    children: [
-                        this.smileButtonView,
-                        this.coolButtonView,
-                        this.screamingButtonView,
-                    ]
+                    children: this.emojiButtonViews
                 }
             ]
         } );
@@ -125,17 +121,11 @@ export default class EmojiListView extends View {
     render() {
         super.render();
 
-        submitHandler( {
+        SubmitHandler( {
             view: this
         } );
 
-        const childViews = [
-            this.smileButtonView,
-            this.coolButtonView,
-            this.screamingButtonView,
-        ];
-
-        childViews.forEach( v => {
+        this.emojiButtonViews.map( v => {
             // Register the view as focusable.
             this._focusables.add( v );
 
@@ -177,20 +167,10 @@ export default class EmojiListView extends View {
 }
 
 /**
- * Fired when the form view is submitted (when one of the children triggered the submit event),
- * e.g. click on {@link #saveButtonView}.
+ * Fired when the emoji button is clicked ({module:ui/button/buttonview~ButtonView}).
  *
- * @event submit
- */
-
-/**
- * Fired when the form view is canceled, e.g. click on {@link #cancelButtonView}.
- *
- * @event cancel
- */
-
-/**
- * Fired when the {@link #unlinkButtonView} is clicked.
- *
- * @event unlink
+ * @event emoji:{type}
+ * @param {String} name The emoji name.
+ * @param {*} value The new attribute value.
+ * @param {*} oldValue The previous attribute value.
  */
