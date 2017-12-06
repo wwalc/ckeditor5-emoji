@@ -33,7 +33,7 @@ ClassicEditor
     .create( document.querySelector( '#editor' ), {
         plugins: [
             Essentials,
-            Paragraph, Heading, Bold, Italic, Heading, List, Emoji
+            Paragraph, Heading, Bold, Italic, List, Emoji
         ],
         emoji: [
             { name: 'smile', text: '😀' },
@@ -43,7 +43,7 @@ ClassicEditor
             { name: 'confusion', text: '😕' },
             { name: 'crying', text: '😢' }
         ],
-        toolbar: [ 'headings', 'undo', 'redo', 'bold', 'italic', 'bulletedList', 'numberedList', 'emoji' ]
+        toolbar: [ 'headings', 'undo', 'redo', 'bold', 'italic', 'emoji' ]
     } )
     .then( editor => {
         window.editor = editor;
