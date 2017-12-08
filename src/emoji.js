@@ -87,7 +87,7 @@ export default class Emoji extends Plugin {
 				const document = editor.document;
 				const batch = document.batch();
 				document.enqueueChanges( () => {
-					batch.insertText( emoji.text + ' ', document.selection.getFirstPosition() );
+					batch.insertText( emoji.text, document.selection.getFirstPosition() );
 					this._hidePanel();
 				} );
 			} );
