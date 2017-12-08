@@ -167,10 +167,8 @@ export default class EmojiListView extends View {
 }
 
 /**
- * Fired when the emoji button is clicked ({module:ui/button/buttonview~ButtonView}).
+ * Fired when the emoji button is clicked ({module:emoji/emoji~EmojiListView}).
  *
  * @event emoji:{type}
- * @param {String} name The emoji name.
- * @param {*} value The new attribute value.
- * @param {*} oldValue The previous attribute value.
+ * @param {String} type The emoji type.
  */
