@@ -84,10 +84,8 @@ export default class Emoji extends Plugin {
 
 		editor.config.get( 'emoji' ).forEach( emoji => {
 			this.listenTo( emojiView, 'emoji:' + emoji.name, () => {
-				const document = editor.document;
-				const batch = document.batch();
-				document.enqueueChanges( () => {
-					batch.insertText( emoji.text, document.selection.getFirstPosition() );
+				editor.model.change( writer => {
+					writer.insertText( emoji.text, editor.model.document.selection.getFirstPosition() );
 					this._hidePanel();
 				} );
 			} );
