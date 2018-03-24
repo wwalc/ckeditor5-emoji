@@ -13,7 +13,7 @@ The plugin was built on top of the latest stable version of CKEditor 5 (`1.0.0-b
 
 ## Enabling the emoji plugin
 
-Since this is a third-party plugin, it is not enabled by default in CKEditor 5 and has to be added to it manually. For more information check the official documentation about [creating custom builds](https://docs.ckeditor.com/ckeditor5/latest/builds/guides/development/custom-builds.html).~
+Since this is a third-party plugin, it is not enabled by default in CKEditor 5 and has to be added to it manually. For more information check the official documentation about [creating custom builds](https://docs.ckeditor.com/ckeditor5/latest/builds/guides/development/custom-builds.html).
 
 To install it, run:
 
