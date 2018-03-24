@@ -111,9 +111,10 @@ export default class Emoji extends Plugin {
 	 * @returns {module:utils/dom/position~Options}
 	 */
 	_getBalloonPositionData() {
-		const viewDocument = this.editor.editing.view;
+		const view = this.editor.editing.view;
+		const viewDocument = view.document;
 		const target =
-			viewDocument.domConverter.viewRangeToDom( viewDocument.selection.getFirstRange() );
+			view.domConverter.viewRangeToDom( viewDocument.selection.getFirstRange() );
 
 		return { target };
 	}

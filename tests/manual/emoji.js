@@ -27,7 +27,7 @@ ClassicEditor
 			{ name: 'surprise', text: '😮' },
 			{ name: 'confusion', text: '😕' }
 		],
-		toolbar: [ 'headings', 'undo', 'redo', 'bold', 'italic', 'bulletedList', 'numberedList', 'emoji' ]
+		toolbar: [ 'heading', 'undo', 'redo', 'bold', 'italic', 'bulletedList', 'numberedList', 'emoji' ]
 	} )
 	.then( editor => {
 		window.editor = editor;

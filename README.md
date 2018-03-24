@@ -9,30 +9,27 @@ The plugin was created during hackathon, it is roughly based on the source code 
 
 ## CKEditor 5 compatibility
 
-The plugin was built on top of the latest development version of CKEditor 5 (`4c1e371 `) and **does not work with the latest "official release" (ver. 1.0.0-alpha.2)**.
-It should be compatible with 1.0.0-beta.1 though (once it is released).
+The plugin was built on top of the latest stable version of CKEditor 5 (`1.0.0-beta.1`).
 
 ## Enabling the emoji plugin
 
-~Since this is a third-party plugin, it is not enabled by default in CKEditor 5 and has to be added to it manually. For more information check the official documentation about [creating custom builds](https://docs.ckeditor.com/ckeditor5/latest/builds/guides/development/custom-builds.html).~
+Since this is a third-party plugin, it is not enabled by default in CKEditor 5 and has to be added to it manually. For more information check the official documentation about [creating custom builds](https://docs.ckeditor.com/ckeditor5/latest/builds/guides/development/custom-builds.html).~
 
-~To install it, run:~
+To install it, run:
 
 ```
 npm install --save @wwalc/ckeditor5-emoji
 ```
 
-~When updating the build configuration use the following:~
+When updating the build configuration use the following:
 
  * `@wwalc/ckeditor5-emoji/src/emoji` – plugin import path
  * `Emoji` – plugin name
  * `emoji` – toolbar item (button)
 
-**Note: the above steps will not work today, due to compatibility issues described above.**
-
 ### Development environment
 
-At this moment, the only way to enable it is to setup a local [development environment](https://docs.ckeditor.com/ckeditor5/latest/framework/guides/contributing/development-environment.html) and build a custom editor there.
+To enable the plugin you amy also setup a local [development environment](https://docs.ckeditor.com/ckeditor5/latest/framework/guides/contributing/development-environment.html) and build a custom editor there.
 
 ## Configuration
 
@@ -53,7 +50,7 @@ ClassicEditor
             { name: 'confusion', text: '😕' },
             { name: 'crying', text: '😢' }
         ],
-        toolbar: [ 'headings', 'undo', 'redo', 'bold', 'italic', 'emoji' ]
+        toolbar: [ 'heading', 'undo', 'redo', 'bold', 'italic', 'emoji' ]
     } )
     .then( editor => {
         window.editor = editor;
