@@ -1,28 +1,32 @@
 {
   "name": "@wwalc/ckeditor5-emoji",
-  "version": "1.0.0",
+  "version": "10.0.0",
   "description": "Emoji feature for CKEditor 5.",
   "keywords": [
     "ckeditor5",
-    "ckeditor5-feature"
+    "ckeditor5-feature",
+    "ckeditor",
+    "ckeditor 5",
+    "emoji",
+    "smiley",
+    "emoticons"
   ],
   "dependencies": {
-    "@ckeditor/ckeditor5-core": "^1.0.0-beta.1",
-    "@ckeditor/ckeditor5-engine": "^1.0.0-beta.1",
-    "@ckeditor/ckeditor5-theme-lark": "^1.0.0-beta.1",
-    "@ckeditor/ckeditor5-ui": "^1.0.0-beta.1"
+    "@ckeditor/ckeditor5-core": "^10.0.0",
+    "@ckeditor/ckeditor5-engine": "^10.0.0",
+    "@ckeditor/ckeditor5-ui": "^10.0.0"
   },
   "devDependencies": {
-    "@ckeditor/ckeditor5-basic-styles": "^1.0.0-beta.1",
-    "@ckeditor/ckeditor5-clipboard": "^1.0.0-beta.1",
-    "@ckeditor/ckeditor5-editor-classic": "^1.0.0-beta.1",
-    "@ckeditor/ckeditor5-enter": "^1.0.0-beta.1",
-    "@ckeditor/ckeditor5-essentials": "^1.0.0-beta.1",
-    "@ckeditor/ckeditor5-heading": "^1.0.0-beta.1",
-    "@ckeditor/ckeditor5-list": "^1.0.0-beta.1",
-    "@ckeditor/ckeditor5-paragraph": "^1.0.0-beta.1",
-    "@ckeditor/ckeditor5-typing": "^1.0.0-beta.1",
-    "@ckeditor/ckeditor5-undo": "^1.0.0-beta.1",
+    "@ckeditor/ckeditor5-basic-styles": "^10.0.0",
+    "@ckeditor/ckeditor5-clipboard": "^10.0.0",
+    "@ckeditor/ckeditor5-editor-classic": "^10.0.0",
+    "@ckeditor/ckeditor5-enter": "^10.0.0",
+    "@ckeditor/ckeditor5-essentials": "^10.0.0",
+    "@ckeditor/ckeditor5-heading": "^10.0.0",
+    "@ckeditor/ckeditor5-list": "^10.0.0",
+    "@ckeditor/ckeditor5-paragraph": "^10.0.0",
+    "@ckeditor/ckeditor5-typing": "^10.0.0",
+    "@ckeditor/ckeditor5-undo": "^10.0.0",
     "eslint": "^4.8.0",
     "eslint-config-ckeditor5": "^1.0.7",
     "husky": "^0.14.3",
@@ -33,7 +37,7 @@
     "npm": ">=3.0.0"
   },
   "author": "Wiktor Walc",
-  "license": "(GPL-2.0 OR LGPL-2.1 OR MPL-1.1)",
+  "license": "(GPL-2.0-or-later OR LGPL-2.1 OR MPL-1.1)",
   "bugs": "https://github.com/wwalc/ckeditor5-emoji/issues",
   "repository": {
     "type": "git",
