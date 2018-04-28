@@ -9,7 +9,7 @@ The plugin was created during hackathon, it is roughly based on the source code 
 
 ## CKEditor 5 compatibility
 
-The plugin was built on top of the latest stable version of CKEditor 5 (`1.0.0-beta.1`).
+The plugin was built on top of the latest stable version of CKEditor 5 (`v10.0.0`).
 
 ## Enabling the emoji plugin
 
@@ -36,6 +36,8 @@ To enable the plugin you amy also setup a local [development environment](https:
 The list of Emojis is configurable via `config.emoji`:
 
 ```js
+import Emoji from '@wwalc/ckeditor5-emoji/src/emoji';
+
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
         plugins: [

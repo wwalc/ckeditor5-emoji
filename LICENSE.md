@@ -1,8 +1,8 @@
 Software License Agreement
 ==========================
 
-**Link feature for CKEditor 5.** – https://github.com/ckeditor/ckeditor5-link <br>
-Copyright (c) 2003-2017, [CKSource](http://cksource.com) Frederico Knabben. All rights reserved.
+**Emoji feature for CKEditor 5.** – https://github.com/wwalc/ckeditor5-emoji <br>
+Copyright (c) 2003-2018, Wiktor Walc. All rights reserved.
 
 Licensed under the terms of any of the following licenses at your choice:
 
@@ -11,11 +11,6 @@ Licensed under the terms of any of the following licenses at your choice:
 * [Mozilla Public License Version 1.1 or later (the "MPL")](http://www.mozilla.org/MPL/MPL-1.1.html)
 
 You are not required to, but if you want to explicitly declare the license you have chosen to be bound to when using, reproducing, modifying and distributing this software, just include a text file titled "legal.txt" in your version of this software, indicating your license choice. In any case, your choice will not restrict any recipient of your version of this software to use, reproduce, modify and distribute this software under any of the above licenses.
-
-Sources of Intellectual Property Included in CKEditor
------------------------------------------------------
-
-Where not otherwise indicated, all CKEditor content is authored by CKSource engineers and consists of CKSource-owned intellectual property. In some specific instances, CKEditor will incorporate work done by developers outside of CKSource with their express permission.
 
 Trademarks
 ----------
