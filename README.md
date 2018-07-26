@@ -9,7 +9,7 @@ The plugin was created during hackathon, it is roughly based on the source code 
 
 ## CKEditor 5 compatibility
 
-The plugin was built on top of the latest stable version of CKEditor 5 (`v10.0.0`).
+The plugin was built on top of the latest stable version of CKEditor 5 (`v11.0.1`).
 
 ## 😎 Enabling the emoji plugin
 

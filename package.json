@@ -1,6 +1,6 @@
 {
   "name": "@wwalc/ckeditor5-emoji",
-  "version": "10.0.2",
+  "version": "11.0.0",
   "description": "Emoji feature for CKEditor 5.",
   "keywords": [
     "ckeditor5",
@@ -11,33 +11,31 @@
     "smiley",
     "emoticons"
   ],
-  "dependencies": {
-    "@ckeditor/ckeditor5-core": "^10.0.0",
-    "@ckeditor/ckeditor5-engine": "^10.0.0",
-    "@ckeditor/ckeditor5-ui": "^10.0.0"
-  },
   "devDependencies": {
-    "@ckeditor/ckeditor5-basic-styles": "^10.0.0",
-    "@ckeditor/ckeditor5-clipboard": "^10.0.0",
-    "@ckeditor/ckeditor5-editor-classic": "^10.0.0",
-    "@ckeditor/ckeditor5-enter": "^10.0.0",
-    "@ckeditor/ckeditor5-essentials": "^10.0.0",
-    "@ckeditor/ckeditor5-heading": "^10.0.0",
-    "@ckeditor/ckeditor5-list": "^10.0.0",
-    "@ckeditor/ckeditor5-paragraph": "^10.0.0",
-    "@ckeditor/ckeditor5-typing": "^10.0.0",
-    "@ckeditor/ckeditor5-undo": "^10.0.0",
-    "eslint": "^4.8.0",
+    "@ckeditor/ckeditor5-core": "^11.0.0",
+    "@ckeditor/ckeditor5-engine": "^10.2.0",
+    "@ckeditor/ckeditor5-ui": "^11.0.0"
+    "@ckeditor/ckeditor5-basic-styles": "^10.0.2",
+    "@ckeditor/ckeditor5-clipboard": "^10.0.2",
+    "@ckeditor/ckeditor5-editor-classic": "^11.0.0",
+    "@ckeditor/ckeditor5-enter": "^10.1.1",
+    "@ckeditor/ckeditor5-essentials": "^10.1.1",
+    "@ckeditor/ckeditor5-heading": "^10.0.2",
+    "@ckeditor/ckeditor5-list": "^11.0.1",
+    "@ckeditor/ckeditor5-paragraph": "^10.0.2",
+    "@ckeditor/ckeditor5-typing": "^11.0.0",
+    "@ckeditor/ckeditor5-undo": "^10.0.2",
+    "eslint": "^4.15.0",
     "eslint-config-ckeditor5": "^1.0.7",
     "husky": "^0.14.3",
-    "lint-staged": "^4.2.3"
+    "lint-staged": "^7.0.0"
   },
   "engines": {
     "node": ">=6.0.0",
     "npm": ">=3.0.0"
   },
   "author": "Wiktor Walc",
-  "license": "(GPL-2.0-or-later OR LGPL-2.1 OR MPL-1.1)",
+  "license": "(GPL-2.0-or-later)",
   "bugs": "https://github.com/wwalc/ckeditor5-emoji/issues",
   "repository": {
     "type": "git",
