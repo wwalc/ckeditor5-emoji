@@ -1,6 +1,6 @@
 {
   "name": "@wwalc/ckeditor5-emoji",
-  "version": "11.0.0",
+  "version": "11.0.1",
   "description": "Emoji feature for CKEditor 5.",
   "keywords": [
     "ckeditor5",
@@ -11,10 +11,12 @@
     "smiley",
     "emoticons"
   ],
-  "devDependencies": {
+  "peerDependencies": {
     "@ckeditor/ckeditor5-core": "^11.0.0",
     "@ckeditor/ckeditor5-engine": "^10.2.0",
-    "@ckeditor/ckeditor5-ui": "^11.0.0",
+    "@ckeditor/ckeditor5-ui": "^11.0.0"
+  },
+  "devDependencies": {
     "@ckeditor/ckeditor5-basic-styles": "^10.0.2",
     "@ckeditor/ckeditor5-clipboard": "^10.0.2",
     "@ckeditor/ckeditor5-editor-classic": "^11.0.0",
